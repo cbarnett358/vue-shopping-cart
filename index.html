@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<!--
+  WARNING! Make sure that you match all Quasar related
+  tags to the same version! (Below it's "@2.8.4")
+-->
+
+<head>
+    <title class="q-pa-md ">Heckin' Snackers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="hs-icon" href="./images/hs-logo.png">
+    <link rel="icon" href="./images/heckintthumb.png">
+    <link rel="stylesheet" href="https://use.typekit.net/xgk8yrx.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Paytone+One|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.8.4/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+<div id="app">
+    <q-layout view="hHh lpR fFf" dark>
+
+        <q-header elevated class="bg-white text-primary" v-for="item in shop" v-for="(item,i) in products" :key="i">
+            <q-toolbar>
+                <q-toolbar-title q-pa-lg>
+                        <img src="images/dog.gif" height="70">
+            </q-toolbar-title>
+
+                <q-btn icon="shopping_basket" pa-lg flat round  @click="drawerRight = !drawerRight"  :class = "{'drawer-open': drawerRight}"> {{item.qty}} </q-btn>
+            </q-toolbar>
+        </q-header>
+       <q-drawer show-if-above v-model="drawerRight" side="right" bordered :width="400" v-model="drawerRight">
+
+            <!-- drawer content -->
+
+            <h3 class="text-info q-pa-md ">CHECKOUT</h3>
+                <q-item-section v-for="item in cart" v-for="item in shop" v-for="(item,i) in products" :key="i">
+                    <ul>
+                        <li>
+                        <q-avatar rounded lg>
+                            <img :src="'./images/products/'+item.id+'.jpg'"/>
+                        </q-avatar>
+
+                        <h6 class="text-primary">{{item.name}} x {{item.qty}}</h6>
+
+                            <q-btn flat  @click.prevent="removeFromCart(item)" class="btn btn-primary bg-red text-white">Remove</q-btn>
+
+
+                        </li>
+
+                    </ul>
+
+
+                </q-item-section>
+
+            <q-separator></q-separator>
+
+            <h5 class="q-pa-md ">Total: ${{total}}.00</h5>
+
+
+        </q-drawer>
+
+        <q-page-container>
+
+
+
+            <div id="q-app" style="min-height: 50vh;">
+
+
+                <h3 class="text-info q-pa-lg ">SHOP OUR SNACKERS</h3>
+                <div class="q-pa-lg row items-start q-gutter-lg">
+
+                    <q-card class="my-card" v-for="item in shop" v-for="(item,i) in products" :key="i"><img :src="'./images/products/'+item.id+'.jpg'" @click="open('top')"/>
+
+
+                        <q-card-section>
+                            <div class="text-h5 text-primary">{{item.name}}</div>
+                            <div class="text-subtitle3 text-">${{item.cost}}.00</div>
+                        </q-card-section>
+
+                        <q-card-actions>
+                            <q-btn label="DETAILS" class="bg-info text-white" @click="open('top')"></q-btn>
+                            <q-btn flat  @click="addToCart(item)" class="btn btn-primary bg-primary text-white">Add to Cart</q-btn>
+
+                            <q-dialog v-model="dialog" :position="position">
+                                <q-card style="width: 950px">
+                                    <q-linear-progress :value="0.6" color="primary"></q-linear-progress>
+
+                                    <q-card-section>
+                                        <q-card >
+                                            <q-card-section>
+                                                <div class="text-h5 text-primary"> {{item.name}}</div>
+                                            </q-card-section>
+
+                                            <q-card-section class="q-pt-none">
+                                                {{item.description}}
+                                            </q-card-section>
+
+                                            <q-card-actions align="right" class="text-white bg-primary">
+                                                <q-btn flat label="Close" v-close-popup></q-btn>
+                                            </q-card-actions>
+                                        </q-card>
+
+
+                                    </q-card-section>
+                                </q-card>
+
+                                <q-card>
+                                    <q-card-section>
+                                        <div class="text-h5 text-primary"> {{item.name}}</div>
+                                    </q-card-section>
+
+                                    <q-card-section class="q-pt-none">
+                                        {{item.description}}
+                                    </q-card-section>
+
+                                    <q-card-actions align="right" class="text-white bg-primary">
+                                        <q-btn flat label="Close" v-close-popup></q-btn>
+                                    </q-card-actions>
+                                </q-card>
+                            </q-dialog>
+
+
+                        </q-card-actions>
+                    </q-card>
+
+
+
+
+                </div>
+            </div>
+
+
+        </q-page-container>
+
+        <q-footer elevated class="bg-info text-white">
+
+
+        </q-footer>
+
+
+    </q-layout>
+</div>
+>
+<!-- Add the following at the end of your body tag -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/quasar@2.8.4/dist/quasar.umd.js"></script>
+
+<script src="js/app-models.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app-quasar.js"></script>
+
+
+
+
+<script>
+    app.mount('#app')
+    app.use(Quasar, { config: {} })
+
+</script>
+</body>
+</html>

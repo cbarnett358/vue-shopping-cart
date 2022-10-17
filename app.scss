@@ -1,0 +1,169 @@
+:root {
+    --smaller: .75;
+}
+
+.q-toolbar,.q-btn, h1, h2, h3, h4, h5, h6 {
+    font-family: program, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p {
+    font-family: program, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.q-header {
+    .q-toolbar {
+        min-height: 55px;
+        font-family: program, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .q-toolbar__title {
+        font-size: 28px;
+    }
+
+
+}
+
+.q-footer {
+    .q-toolbar {
+        min-height: 30px;
+    }
+
+    .q-toolbar__title {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.q-timeline__heading-title {
+    font-size: 3em;
+}
+
+.q-timeline__dot .q-icon {
+    top: 1px;
+    font-size: 40px;
+}
+
+.q-toolbar .q-icon {
+    font-size: 40px;
+}
+
+.countdown-timer {
+    ul {
+        padding-left: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1em;
+        line-height: 2em;
+        list-style-type: none;
+        padding: 20px;
+        text-transform: uppercase;
+        text-align: center;
+
+    }
+
+    li span {
+        display: block;
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .expired {
+        padding: 5px 20px 15px;
+        line-height: 1em;
+        font-size: 2em;
+    }
+
+    @media all and (max-width: 768px) {
+        li {
+            padding: 8px;
+        }
+    }
+}
+
+.legendary {
+    .barney {
+        height: 160px;
+    }
+
+    .barney-slogan {
+        margin: 0;
+        text-align: center;
+    }
+
+    .countdown-timer {
+        min-width: 450px;
+        text-align: center;
+
+        li {
+            font-size: 1.3em;
+            line-height: 2em;
+        }
+
+        li span {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .expired {
+            margin-top: 30px;
+            line-height: 1em;
+            font-size: 3em;
+        }
+    }
+
+    @media all and (max-width: 768px) {
+        .barney-slogan {
+            font-size: 1.2em;
+        }
+
+        .countdown-timer {
+            min-width: 375px;
+            margin-top: 25px;
+
+            li {
+                font-size: 1em;
+            }
+
+            li span {
+                font-size: 1.75em;
+            }
+        }
+    }
+
+    @media all and (max-width: 600px) {
+        .barney-slogan {
+            font-size: 1em;
+        }
+
+        .q-timeline__content .row>div{
+            width: 280px;
+            text-align: center;
+        }
+
+        .countdown-timer {
+            min-width: 250px;
+            margin-top: 0;
+        }
+    }
+}
+
+.wait-for-it {
+    font-variant: small-caps;
+}
+
+.drawer-open {
+    transform: rotate(45deg);
+}
+.my-card{
+width: 100%;
+    max-width: 250px;
+}

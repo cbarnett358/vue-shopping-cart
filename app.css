@@ -1,0 +1,84 @@
+:root {
+  --smaller: .75;
+}
+.my-card{
+  width: 100%;
+  max-width: 250px;
+}
+.q-toolbar, .q-btn, h1, h2, h3, h4, h5, h6 {
+  font-family: program, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.text-h5{
+  font-size: 20px;
+  font-family: program, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+
+}
+.q-page-container{
+  background-image: url("../images/heckin-bg.png");
+  background-repeat: no-repeat;
+background-size: cover;
+}
+.text-subtitle2{
+  font-size: 18px;
+  font-family: program, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.text-subtitle3{
+  font-size: 18px;
+  font-family: program, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+p {
+  font-family: program, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.q-header .q-toolbar {
+  min-height: 85px;
+}
+.q-header .q-toolbar__title {
+  font-size: 28px;
+}
+.q-header .q-avatar {
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+
+ .q-toolbar {
+  min-height: 30px;
+}
+.q-footer
+{
+  min-height: 130px;
+}
+.q-footer .q-toolbar__title {
+  font-size: 14px;
+  text-align: center;
+}
+
+.q-timeline__heading-title {
+  font-size: 3em;
+}
+
+.q-timeline__dot .q-icon {
+  top: 1px;
+  font-size: 40px;
+}
+
+.q-toolbar .q-icon {
+  font-size: 40px;
+}
+
+
+.drawer-open {
+  transform: rotate(35deg);
+}
+
+/*# sourceMappingURL=app.css.map */
